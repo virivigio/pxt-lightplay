@@ -1,0 +1,17 @@
+{
+    "name": "lightplay",
+    "meta": {},
+    "editor": "blocksprj",
+    "pubId": "",
+    "pubCurrent": false,
+    "target": "microbit",
+    "targetVersion": "2.3.19",
+    "cloudSync": false,
+    "id": "1f4c20d1-7108-4289-bdb8-b90b86201dbf",
+    "recentUse": 1589383973,
+    "modificationTime": 1589383973,
+    "path": "lightplay",
+    "blobCurrent": false,
+    "saveId": null,
+    "githubCurrent": false
+}
