@@ -1,5 +1,5 @@
 {
-    "name": "lightplay",
+    "name": "pxt-lightplay",
     "description": "",
     "dependencies": {
         "core": "*",
