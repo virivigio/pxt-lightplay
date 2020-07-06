@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "bluetooth": "*",
-        "pxt-scratch-microbit-more": "file:../pxt-scratch-microbit-more"
+        "pxt-scratch-microbit-more": "file:../pxt-scratch-microbit-more",
+        "pxt-kitronik-robotics-board": "github:kitronikltd/pxt-kitronik-robotics-board#v0.0.2"
     },
     "files": [
         "main.blocks",
