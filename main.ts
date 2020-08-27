@@ -26,6 +26,10 @@ pins.analogWritePin(AnalogPin.P0, 0) //B
 //pins.analogWritePin(AnalogPin.P1, 0) //G
 //pins.analogWritePin(AnalogPin.P0, 0) //B
 
+//clear transmission buffer
+MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
+MbitMore.setSharedData(SharedDataIndex.DATA1, 0)
+
 MbitMore.startService()
 
 basic.forever(function () {
