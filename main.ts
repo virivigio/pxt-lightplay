@@ -13,18 +13,18 @@ let G = 0
 let B = 0
 
 function debug(message:string) {
-    basic.showString(message)
+//    basic.showString(message)
 }
 
 //check pin numbers
 //turn off Led 1
-pins.analogWritePin(AnalogPin.P2, 0) //R
+pins.analogWritePin(AnalogPin.P0, 0) //R
 pins.analogWritePin(AnalogPin.P1, 0) //G
-pins.analogWritePin(AnalogPin.P0, 0) //B
+pins.analogWritePin(AnalogPin.P2, 0) //B
 //turn off Led 2
-//pins.analogWritePin(AnalogPin.P2, 0) //R
-//pins.analogWritePin(AnalogPin.P1, 0) //G
-//pins.analogWritePin(AnalogPin.P0, 0) //B
+pins.analogWritePin(AnalogPin.P3, 0) //R
+pins.analogWritePin(AnalogPin.P4, 0) //G
+pins.analogWritePin(AnalogPin.P10, 0) //B
 
 //clear transmission buffer
 MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
@@ -50,13 +50,13 @@ basic.forever(function () {
         debug("Led:" + ledRGB + " R:" + R + " G:" + G + " B:" + B)
         //check pin numbers
         if (ledRGB == 1) {
-            pins.analogWritePin(AnalogPin.P2, R*64) //R
+            pins.analogWritePin(AnalogPin.P0, R*64) //R
             pins.analogWritePin(AnalogPin.P1, G*64) //G
-            pins.analogWritePin(AnalogPin.P0, B*64) //B
+            pins.analogWritePin(AnalogPin.P2, B*64) //B
         } else {
-            //pins.analogWritePin(AnalogPin.P2, R*64) //R
-            //pins.analogWritePin(AnalogPin.P1, G*64) //G
-            //pins.analogWritePin(AnalogPin.P0, B*64) //B
+            pins.analogWritePin(AnalogPin.P3, R*64) //R
+            pins.analogWritePin(AnalogPin.P4, G*64) //G
+            pins.analogWritePin(AnalogPin.P10, B*64) //B
         }
         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
@@ -66,12 +66,12 @@ basic.forever(function () {
         B = (slot0 >> 0) & 15
         debug("Led All:" + " R:" + R + " G:" + G + " B:" + B)
         //check pin numbers
-        pins.analogWritePin(AnalogPin.P2, R*64) //R
+        pins.analogWritePin(AnalogPin.P0, R*64) //R
         pins.analogWritePin(AnalogPin.P1, G*64) //G
-        pins.analogWritePin(AnalogPin.P0, B*64) //B
-        //pins.analogWritePin(AnalogPin.P2, R*64) //R
-        //pins.analogWritePin(AnalogPin.P1, G*64) //G
-        //pins.analogWritePin(AnalogPin.P0, B*64) //B
+        pins.analogWritePin(AnalogPin.P2, B*64) //B
+        pins.analogWritePin(AnalogPin.P3, R*64) //R
+        pins.analogWritePin(AnalogPin.P4, G*64) //G
+        pins.analogWritePin(AnalogPin.P10, B*64) //B
         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
 
