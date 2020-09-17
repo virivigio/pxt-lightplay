@@ -22,9 +22,9 @@ pins.analogWritePin(AnalogPin.P0, 0) //R
 pins.analogWritePin(AnalogPin.P1, 0) //G
 pins.analogWritePin(AnalogPin.P2, 0) //B
 //turn off Led 2
-pins.analogWritePin(AnalogPin.P3, 0) //R
-pins.analogWritePin(AnalogPin.P4, 0) //G
-pins.analogWritePin(AnalogPin.P10, 0) //B
+//pins.analogWritePin(AnalogPin.P3, 0) //R
+//pins.analogWritePin(AnalogPin.P4, 0) //G
+//pins.analogWritePin(AnalogPin.P10, 0) //B
 
 //clear transmission buffer
 MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
@@ -54,9 +54,9 @@ basic.forever(function () {
             pins.analogWritePin(AnalogPin.P1, G*64) //G
             pins.analogWritePin(AnalogPin.P2, B*64) //B
         } else {
-            pins.analogWritePin(AnalogPin.P3, R*64) //R
-            pins.analogWritePin(AnalogPin.P4, G*64) //G
-            pins.analogWritePin(AnalogPin.P10, B*64) //B
+            //pins.analogWritePin(AnalogPin.P3, R*64) //R
+            //pins.analogWritePin(AnalogPin.P4, G*64) //G
+            //pins.analogWritePin(AnalogPin.P10, B*64) //B
         }
         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
@@ -69,9 +69,9 @@ basic.forever(function () {
         pins.analogWritePin(AnalogPin.P0, R*64) //R
         pins.analogWritePin(AnalogPin.P1, G*64) //G
         pins.analogWritePin(AnalogPin.P2, B*64) //B
-        pins.analogWritePin(AnalogPin.P3, R*64) //R
-        pins.analogWritePin(AnalogPin.P4, G*64) //G
-        pins.analogWritePin(AnalogPin.P10, B*64) //B
+        //pins.analogWritePin(AnalogPin.P3, R*64) //R
+        //pins.analogWritePin(AnalogPin.P4, G*64) //G
+        //pins.analogWritePin(AnalogPin.P10, B*64) //B
         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
 
