@@ -18,13 +18,13 @@ function debug(message:string) {
 
 //check pin numbers
 //turn off Led 1
-pins.analogWritePin(AnalogPin.P0, 0) //R
-pins.analogWritePin(AnalogPin.P1, 0) //G
-pins.analogWritePin(AnalogPin.P2, 0) //B
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1R, 0)
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1G, 0)
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1B, 0)
 //turn off Led 2
-//pins.analogWritePin(AnalogPin.P3, 0) //R
-//pins.analogWritePin(AnalogPin.P4, 0) //G
-//pins.analogWritePin(AnalogPin.P10, 0) //B
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2R, 0)
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2G, 0)
+Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2B, 0)
 
 //clear transmission buffer
 MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
@@ -50,13 +50,13 @@ basic.forever(function () {
         debug("Led:" + ledRGB + " R:" + R + " G:" + G + " B:" + B)
         //check pin numbers
         if (ledRGB == 1) {
-            pins.analogWritePin(AnalogPin.P0, R*64) //R
-            pins.analogWritePin(AnalogPin.P1, G*64) //G
-            pins.analogWritePin(AnalogPin.P2, B*64) //B
+       	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1R, R*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1G, G*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1B, B*256)
         } else {
-            //pins.analogWritePin(AnalogPin.P3, R*64) //R
-            //pins.analogWritePin(AnalogPin.P4, G*64) //G
-            //pins.analogWritePin(AnalogPin.P10, B*64) //B
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2R, R*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2G, G*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2B, B*256)
         }
         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
@@ -66,13 +66,13 @@ basic.forever(function () {
         B = (slot0 >> 0) & 15
         debug("Led All:" + " R:" + R + " G:" + G + " B:" + B)
         //check pin numbers
-        pins.analogWritePin(AnalogPin.P0, R*64) //R
-        pins.analogWritePin(AnalogPin.P1, G*64) //G
-        pins.analogWritePin(AnalogPin.P2, B*64) //B
-        //pins.analogWritePin(AnalogPin.P3, R*64) //R
-        //pins.analogWritePin(AnalogPin.P4, G*64) //G
-        //pins.analogWritePin(AnalogPin.P10, B*64) //B
-        MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1R, R*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1G, G*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led1B, B*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2R, R*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2G, G*256)
+	Kitronik_Robotics_Board.ledChannelWrite(Kitronik_Robotics_Board.LedChannels.Led2B, B*256)
+         MbitMore.setSharedData(SharedDataIndex.DATA0, 0)
     }
 
     slot1 = MbitMore.getSharedData(SharedDataIndex.DATA1)
